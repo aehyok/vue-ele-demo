@@ -1,7 +1,5 @@
 <template>
-  <div id="app">
-    <router-view />
-  </div>
+  <div>Hello admin</div>
 </template>
 <script>
 export default {
