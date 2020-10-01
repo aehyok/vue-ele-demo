@@ -1,3 +1,7 @@
 <template>
-  <div>SideMenu New Test List</div>
+  <div>SideMenu New Test List
+      <el-scrollbar>
+          
+      </el-scrollbar>
+  </div>
 </template>
