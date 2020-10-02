@@ -4,6 +4,8 @@ import router from './router'
 import ElementUI from 'element-ui'
 
 import '@/styles/index.scss'
+
+import './routerGuard'
 Vue.use(ElementUI, {
   size: 'medium',
 })

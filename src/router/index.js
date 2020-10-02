@@ -5,13 +5,26 @@ import Layout from '@/layout'
 //引入路由机制
 Vue.use(VueRouter)
 
-const routes = [
+
+export const constantRoutes = [
+    {
+      path: '/login',
+      name: 'login',
+      meta: {
+        title: '登录页',
+      },
+      component: () => import('@/views/login'),
+    },
+  ]
+
+const asyncRoutes = [
     {
         path: '/',
-        name: 'Home',
+        name: '/',
         component: Layout,
         meta: {
             title: '首页',
+            
         },
         children: [
             {
@@ -29,7 +42,7 @@ const routes = [
     },
     {
         path: '/about',
-        name: 'About',
+        name: 'about',
         meta: {
             title: '关于',
         },
@@ -37,16 +50,16 @@ const routes = [
     },
     {
         path: '/login',
-        name: 'About',
+        name: 'login',
         meta: {
-            title: '关于',
+          title: '登录页',
         },
-        component: () => import('@/views/login/login.vue'),
-    },
+        component: () => import('@/views/login'),
+      },
 ]
 
 const router = new VueRouter({
-    routes,
+    routes: [...asyncRoutes],
 })
 
 export default router
