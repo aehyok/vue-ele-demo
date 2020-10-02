@@ -1,35 +1,52 @@
 <template>
-  <el-menu
-    class="el-menu-demo"
-    mode="horizontal"
-    background-color="#2bae85"
-    text-color="#fff"
-    active-text-color="#ffd04b"
-  >
-    <el-menu-item index="1">处理中心</el-menu-item>
-    <el-submenu index="2">
-      <template slot="title">我的工作台</template>
-      <el-menu-item index="2-1">选项1</el-menu-item>
-      <el-menu-item index="2-2">选项2</el-menu-item>
-      <el-menu-item index="2-3">选项3</el-menu-item>
-      <el-submenu index="2-4">
-        <template slot="title">选项4</template>
-        <el-menu-item index="2-4-1">选项1</el-menu-item>
-        <el-menu-item index="2-4-2">选项2</el-menu-item>
-        <el-menu-item index="2-4-3">选项3</el-menu-item>
-      </el-submenu>
-    </el-submenu>
-    <el-menu-item index="3" disabled>消息中心</el-menu-item>
-    <el-menu-item index="4"
-      ><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item
+  <el-row  type="flex" justify="space-between" class="header" :gutter="20" >
+    <el-col :span="3"
+      ><div class="grid-content bg-purple">
+        <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
+          <el-radio-button :label="false">展开</el-radio-button>
+          <el-radio-button :label="true">收起</el-radio-button>
+        </el-radio-group>
+      </div></el-col
     >
-  </el-menu>
+    <el-col :span="2"
+      ><div class="grid-content bg-purple">
+        <el-dropdown>
+          <span class="el-dropdown-link">
+            个人中心<i class="el-icon-arrow-down el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>用户信息</el-dropdown-item>
+            <el-dropdown-item>主题</el-dropdown-item>
+            <el-dropdown-item>修改密码</el-dropdown-item>
+            <el-dropdown-item>设置</el-dropdown-item>
+            <el-dropdown-item disabled></el-dropdown-item>
+            <el-dropdown-item divided>Logout</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div></el-col
+    >
+  </el-row>
 </template>
 
+<style>
+.el-dropdown-link {
+  cursor: pointer;
+  color: #409eff;
+}
+.el-icon-arrow-down {
+  font-size: 12px;
+}
+
+.header{
+  margin-top: 10px;
+}
+</style>
 <script>
 export default {
   data() {
-    return {};
+    return {
+      isCollapse: true,
+    };
   },
 };
 </script>

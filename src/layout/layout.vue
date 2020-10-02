@@ -1,16 +1,11 @@
 <template>
-  <el-container style="height: 100vh">
-    <el-header class="app-header"> <Header /> </el-header>
-    <el-container style="overflow: auto">
-      <el-aside width="250px"><SideMenu /></el-aside>
-      <el-main class>
-        <div class="main-wrapper" style="position: relative; height: 100%">
-          <router-view></router-view>
-        </div>
-      </el-main>
-    </el-container>
-    <el-main>Main</el-main>
+<el-container style="height: 100vh">
+  <el-aside width="200px"><SideMenu /></el-aside>
+  <el-container>
+    <el-header  class="app-header"><Header /></el-header>
+    <el-main> <router-view></router-view></el-main>
   </el-container>
+</el-container>
 </template>
 
 <script>

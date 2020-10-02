@@ -22,6 +22,7 @@ const asyncRoutes = [
         path: '/',
         name: '/',
         component: Layout,
+        redirect: '/admin',
         meta: {
             title: '首页',
             
@@ -34,10 +35,27 @@ const asyncRoutes = [
                     title: '后台管理',
                     hidden: false
                 },
-                component: () => import('@/views/admin/admin.vue')
+                component: () => import('@/views/admin')
+            },
+            {
+                path: '/home',
+                name: 'home',
+                meta: {
+                    title: '后台管理',
+                    hidden: false
+                },
+                component: () => import('@/views/Home')
+            },
+            {
+                path: '/table',
+                name: 'table',
+                meta: {
+                    title: 'Table管理',
+                    hidden: false
+                },
+                component: () => import('@/views/table')
             }
         ],
-
 
     },
     {

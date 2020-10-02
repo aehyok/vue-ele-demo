@@ -1,20 +1,7 @@
 <template>
-  <el-container style="height: 100vh">
-    <el-header class="app-header">
-      <el-button type="primary" v-on:click="onGotoPage">{{
-        message
-      }}</el-button>
-    </el-header>
-    <el-container style="overflow: auto">
-      <el-aside width="250px">Aside</el-aside>
-      <el-main class>
-        <div class="main-wrapper" style="position: relative; height: 100%">
-          <router-view></router-view>
-        </div>
-      </el-main>
-    </el-container>
-    <el-main>Main</el-main>
-  </el-container>
+  <div>
+    <el-button type="primary" v-on:click="onGotoPage">{{ message }}</el-button>
+  </div>
 </template>
 
 <script>
