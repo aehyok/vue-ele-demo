@@ -53,7 +53,6 @@
             style="width: 100%; margin-top: 20px; height: 50px"
             @click="submitForm"
             :loading="loading"
-            native-type="submit"
           >
             登 录
           </el-button>
@@ -100,9 +99,13 @@ export default {
   methods: {
     dialogFormVisible() {},
     submitForm() {
-      this.loading = true;
-      localStorage.setItem("loginInfo",true);
-       this.$router.push('/')
+       this.$refs.form.validate(valid => {
+        if (valid) {
+          this.loading = true
+          localStorage.setItem("loginInfo",true)
+          this.$router.push('/')
+        }
+       })
     },
   },
 };

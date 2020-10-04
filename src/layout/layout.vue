@@ -1,7 +1,7 @@
 <template>
 <el-container style="height: 100vh">
-  <el-aside width="200px"><SideMenu /></el-aside>
-  <el-container>
+  <el-aside style="width:auto !important;"><SideMenu /></el-aside>
+  <el-container >
     <el-header  class="app-header"><Header /></el-header>
     <el-main> <router-view></router-view></el-main>
   </el-container>

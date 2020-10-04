@@ -7,21 +7,25 @@ import request from '@/utils/request'
  * @param {string} data.messageCode 验证码
  */
 
-// 获取验证码
-export const getImgCode = () => {
-  return request(`/passport/verifycode?category=2&t=${new Date().getTime()}`, {
-    method: 'get',
-  })
-}
+// // 获取Table数据列表
+// export const getTableList = async() => {
+//   const res = await request('/Get/TableList', {
+//     method: 'get',
+//   })
+//   if(res && res.code ===200 ){
+//       return res.data
+//   }
+//   return []
+// }
 
-// 获取栏目类型
-export const getCategoryType = async (data = {}) => {
-  const res = await request('/system/getCategoryType', {
-    method: 'post',
-    data,
-  })
-  if (res && res.code === 200) {
-    return res.data
-  }
-  return []
-}
+// // 获取栏目类型
+// export const getCategoryType = async (data = {}) => {
+//   const res = await request('/system/getCategoryType', {
+//     method: 'post',
+//     data,
+//   })
+//   if (res && res.code === 200) {
+//     return res.data
+//   }
+//   return []
+// }

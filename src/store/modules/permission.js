@@ -3,7 +3,7 @@
 export default {
     namespaced: true,
     state: {
-        isCollapse:true,
+        isCollapse:false,
     },
     getters:{
         //getCollapse:state=>state.isCollapse
