@@ -1,7 +1,7 @@
 <template>
   <div>
 
-<el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse" router="true">
+<el-menu default-active="1-4-1" class="el-menu-vertical-demo" :collapse="getCollapse" :router=true>
   <el-submenu index="1">
     <template slot="title">
       <i class="el-icon-location"></i>
@@ -44,19 +44,15 @@
 </style>
 
 <script>
+import { mapGetters } from 'vuex'
+
   export default {
     data() {
       return {
-        isCollapse: false
       };
     },
-    methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
-      }
-    }
+   computed:{
+    ...mapGetters('permission',['getCollapse']),
+  },
   }
 </script>

@@ -2,10 +2,7 @@
   <el-row  type="flex" justify="space-between" class="header" :gutter="20" >
     <el-col :span="3"
       ><div class="grid-content bg-purple">
-        <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
-          <el-radio-button :label="false">展开</el-radio-button>
-          <el-radio-button :label="true">收起</el-radio-button>
-        </el-radio-group>
+         <el-button type="primary"  @click="changeCollapseLeftNavbar" icon='el-icon-s-operation'></el-button>
       </div></el-col
     >
     <el-col :span="2"
@@ -42,11 +39,22 @@
 }
 </style>
 <script>
+import { mapGetters,mapMutations } from 'vuex'
+
 export default {
   data() {
     return {
-      isCollapse: true,
+      
     };
   },
+  computed:{
+    ...mapGetters('permission',['getCollapse']),
+  },
+  methods:{
+    ...mapMutations('permission',['changeCollapse']),
+    changeCollapseLeftNavbar(){
+        this.changeCollapse()
+    },
+  }
 };
 </script>

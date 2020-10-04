@@ -19,7 +19,7 @@ export default {
   },
   data () {
     return {
-      message: "Hello in Home",
+      
     };
   },
   methods: {
