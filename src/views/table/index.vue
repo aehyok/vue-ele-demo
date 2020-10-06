@@ -101,8 +101,8 @@ export default {
         console.log(row);
     },
     newParameter(){
-      console.log(this.$refs.usage.usage.value);
-      console.log(this.$refs.auditStatus.auditStatus.value);
+      console.log(this.$refs.usage.value);
+      console.log(this.$refs.auditStatus.value);
     }
   },
 };
