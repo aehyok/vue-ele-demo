@@ -1,5 +1,5 @@
 <template>
-    <el-select v-model='value' :name="name" :id="name" :ref="name">
+    <el-select v-model='value' :name="name" :id="name">
         <el-option v-for="(item,index) in list" :key="index" :label="item.value" :value="item.code"></el-option>
     </el-select>
 </template>
