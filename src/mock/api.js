@@ -10,3 +10,7 @@ export const getTableUsage=()=>{
    return axios('/get/table/usage')
 }
 
+export const getTableAuditStatus=()=>{
+    return axios('/get/table/auditStatus')
+ }
+ 

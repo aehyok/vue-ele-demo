@@ -23,3 +23,12 @@ Mock.mock('/get/table/usage',/post|get/i,{
       {code:2,value:'EPG',order:20}
   ]
 })
+
+Mock.mock('/get/table/auditStatus',/post|get/i,{
+  data:[
+      {code:1,value:'未提交审核',order:10},
+      {code:2,value:'审核中',order:20},
+      {code:3,value:'审核通过',order:30},
+      {code:4,value:'审核不通过',order:40}
+  ]
+})

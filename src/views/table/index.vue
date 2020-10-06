@@ -1,9 +1,10 @@
 <template>
     <div>
         <div class="controlbox">
-            <el-button type="primary">新增参数
+            <el-button type="primary" @click="newParameter">新增参数
             </el-button>
-            <Select  name='paramUsage' />
+            <Select ref='usage' :name='select1' />
+            <Select ref='auditStatus' :name='select2' />
         </div>
         <div style="margin-top: 20px">
             <el-table :data="tableData">
@@ -48,6 +49,8 @@ export default {
   },
   data() {
     return {
+      select1:'usage',
+      select2:'auditStatus',
       tableData: [
         {
           paramName: "参数1",
@@ -96,6 +99,10 @@ export default {
     // },
     handleClick(row){
         console.log(row);
+    },
+    newParameter(){
+      console.log(this.$refs.usage.usage.value);
+      console.log(this.$refs.auditStatus.auditStatus.value);
     }
   },
 };

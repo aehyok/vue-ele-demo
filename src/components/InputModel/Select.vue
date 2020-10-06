@@ -1,11 +1,17 @@
 <template>
-    <el-select v-model='value'>
+    <el-select v-model='value' :name="name" :id="name" :ref="name">
         <el-option v-for="(item,index) in list" :key="index" :label="item.value" :value="item.code"></el-option>
     </el-select>
 </template>
 <script>
-import { getTableUsage } from '@/mock/api'
+import { getTableUsage,getTableAuditStatus } from '@/mock/api'
 export default {
+    props:{
+        name:{
+            type : String,
+            default :'0'
+        }
+    },
     data(){
         return {
             list:[],  
@@ -13,14 +19,25 @@ export default {
         }
     },
     beforeCreate(){
-
+        //console.log(this);
     },
     created(){
         console.log('获取select列表数据');
 
-        getTableUsage().then(request=>{
+        this.getTable(this.name).then(request=>{
         this.list=request.data.data;
       });
+    },
+    methods:{
+        getTable(tableName){
+            switch(tableName){
+                case 'usage':
+                    return getTableUsage();
+                case 'auditStatus':
+                    return getTableAuditStatus();
+            }
+        }
+
     }
 }
 </script>
