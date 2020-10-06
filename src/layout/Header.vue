@@ -1,14 +1,14 @@
 <template>
   <el-row  type="flex" justify="space-between" class="header" :gutter="20" >
     <el-col :span="16"
-      ><div class="grid-content bg-purple">
-         <el-button type="primary"  @click="changeCollapseLeftNavbar" icon='el-icon-s-operation'></el-button><span style="margin-left:20px;font-size:20px;">数字乡村振兴运营平台
+      ><div>
+         <el-button @click="changeCollapseLeftNavbar" icon='el-icon-s-operation'></el-button><span style="margin-left:20px;font-size:20px;">数字乡村振兴运营平台
 </span>
       </div></el-col
     >
     
-    <el-col :span="2"
-      ><div class="grid-content bg-purple">
+    <el-col :span="4"
+      ><div class="grid-content-right">
         <el-dropdown>
           <span class="el-dropdown-link">
             个人中心<i class="el-icon-arrow-down el-icon--right"></i>
@@ -30,7 +30,7 @@
 <style>
 .el-dropdown-link {
 
-  
+
   cursor: pointer;
   color: #409eff;
 }
@@ -40,6 +40,9 @@
 
 .header{
   margin-top: 10px;
+}
+.grid-content-right{
+  float:right;
 }
 </style>
 <script>

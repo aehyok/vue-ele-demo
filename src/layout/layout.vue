@@ -1,6 +1,6 @@
 <template>
 <el-container style="height: 100vh">
-  <el-aside style="width:auto !important;"><SideMenu /></el-aside>
+  <el-aside style="width:auto !important;height:100vh;"><SideMenu /></el-aside>
   <el-container >
     <el-header  class="app-header"><Header /></el-header>
     <el-main> <router-view></router-view></el-main>
