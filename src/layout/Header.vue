@@ -1,10 +1,12 @@
 <template>
   <el-row  type="flex" justify="space-between" class="header" :gutter="20" >
-    <el-col :span="3"
+    <el-col :span="6"
       ><div class="grid-content bg-purple">
-         <el-button type="primary"  @click="changeCollapseLeftNavbar" icon='el-icon-s-operation'></el-button>
+         <el-button type="primary"  @click="changeCollapseLeftNavbar" icon='el-icon-s-operation'></el-button><span style="margin-left:20px;font-size:20px;">数字乡村振兴运营平台
+</span>
       </div></el-col
     >
+    
     <el-col :span="2"
       ><div class="grid-content bg-purple">
         <el-dropdown>
