@@ -3,22 +3,30 @@
         <div class="controlbox">
             <el-button type="primary">新增参数
             </el-button>
+            <Select  name='paramUsage' />
         </div>
         <div style="margin-top: 20px">
             <el-table :data="tableData">
-            <el-table-column prop="paramName" label="参数"></el-table-column>
-            <el-table-column prop="paramValue" label="参数值"></el-table-column>
-            <el-table-column prop="paramDesc" label="参数描述"></el-table-column>
-            <el-table-column prop="usage" label="应用范围"></el-table-column>
-            <el-table-column
-            fixed="right"
-            label="操作"
-            width="100">
-            <template slot-scope="scope">
-                <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-                <el-button type="text" size="small" >编辑</el-button>
-            </template>
-            </el-table-column>
+              <el-table-column prop="paramName" label="参数" align="left"></el-table-column>
+              <el-table-column prop="paramValue" label="参数值" align="right"></el-table-column>
+              <el-table-column prop="paramDesc" label="参数描述" align="center"></el-table-column>
+              <el-table-column prop="usage" label="应用范围"></el-table-column>
+              <el-table-column prop="paramImage" label="图片">
+                <template v-slot="scope">
+                  <el-image
+                    :src="scope.row.paramImage"
+                    fit="cover"></el-image>
+                </template>
+              </el-table-column>
+              <el-table-column
+              fixed="right"
+              label="操作"
+              width="100">
+              <template v-slot="scope">
+                  <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
+                  <el-button type="text" size="small" >编辑</el-button>
+              </template>
+              </el-table-column>
             </el-table>
             <el-pagination class="pagination-container"
                 background
@@ -27,12 +35,17 @@
                 </el-pagination>
         </div>
     </div>
+
 </template>
 <script>
 
 import { getTableList } from '@/mock/api'
+import Select from '@/components/InputModel/Select'
 
 export default {
+  components:{
+    Select
+  },
   data() {
     return {
       tableData: [
