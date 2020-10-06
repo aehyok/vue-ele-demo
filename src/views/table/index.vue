@@ -30,7 +30,7 @@
 </template>
 <script>
 
-//import { getTableList } from '@/mock/api'
+import { getTableList } from '@/mock/api'
 
 export default {
   data() {
@@ -71,8 +71,9 @@ export default {
   },
 
   created(){
-      //this.getTableList();
-
+      getTableList().then(req=>{
+        this.tableData=req.data.data;
+      });
   },
   methods: {
     //  getData(){

@@ -86,8 +86,8 @@ export default {
       rememberPasCbox: false,
       loading: false,
       loginForm: {
-        pass: "",
-        account: "",
+        pass: "dvs2020",
+        account: "admin",
         verifCode: "",
       },
       rules: {

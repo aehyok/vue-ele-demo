@@ -1,6 +1,6 @@
 <template>
   <el-row  type="flex" justify="space-between" class="header" :gutter="20" >
-    <el-col :span="6"
+    <el-col :span="16"
       ><div class="grid-content bg-purple">
          <el-button type="primary"  @click="changeCollapseLeftNavbar" icon='el-icon-s-operation'></el-button><span style="margin-left:20px;font-size:20px;">数字乡村振兴运营平台
 </span>
@@ -29,6 +29,8 @@
 
 <style>
 .el-dropdown-link {
+
+  
   cursor: pointer;
   color: #409eff;
 }
