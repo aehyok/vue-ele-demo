@@ -16,6 +16,7 @@ export default {
     onGotoPage() {
       console.log("将要进行页面跳转");
       let momentId = "123";
+      //测试代码
       this.$router.push(`./About?momentId=${momentId}`);
     },
   },
