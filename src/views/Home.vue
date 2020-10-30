@@ -2,6 +2,9 @@
   <div>
     <el-button type="primary" v-on:click="onGotoPage">{{ message }}</el-button>
   </div>
+  <el-dialog visible=true v-dialogDrag>
+    <div>11111</div>
+  </el-dialog>
 </template>
 
 <script>
@@ -17,6 +20,35 @@ export default {
       console.log("将要进行页面跳转");
       let momentId = "123";
       //测试代码
+
+      console.log('aaa')
+      new Promise((resolve)=>{
+        console.log('bbbb')
+        resolve()
+        new Promise((resolve)=>{
+          console.log('cccc')
+          resolve()
+        }).then(()=>{
+          console.log(111)
+          new Promise((resolve)=>{
+            console.log('eee')
+            resolve()
+          }).then(()=>{
+            console.log('fff')
+          })
+        })
+      }).then(()=>{
+        console.log('ggg')
+        new Promise((resolve)=>{
+          console.log(222)
+          resolve()
+        }).then(()=>{
+          console.log(333)
+        })
+      })
+      console.log('hhhh')
+
+
       this.$router.push(`./About?momentId=${momentId}`);
     },
   },
