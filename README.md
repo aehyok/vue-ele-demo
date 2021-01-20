@@ -1,4 +1,4 @@
-# vue-ele-demo
+# hellovue
 
 ## Project setup
 ```
