@@ -1,4 +1,4 @@
-# hellovue
+# hello
 
 ## Project setup
 ```
