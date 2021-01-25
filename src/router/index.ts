@@ -1,16 +1,30 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import Home from "../views/Home.vue";
+import Layout from "@/layout";
+// import wrapper from "@/layout/wrapper/index.vue";
+import login from "@/views/Login.vue";
 
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
+const defaultRoutes: Array<RouteRecordRaw> = [
   {
     path: "/login",
-    name: "Login",
-    component: () => import("../views/Login.vue")
+    name: "login",
+    component: login
+  }
+];
+
+// staticRoutes: Array<RouteRecordRaw>
+const staticRoutes: Array<RouteRecordRaw> = [
+  {
+    path: "/",
+    redirect: "home",
+    component: Layout,
+    children: [
+      {
+        path: "/home",
+        name: "Home",
+        component: Home
+      }
+    ]
   },
   {
     path: "/about",
@@ -22,6 +36,7 @@ const routes: Array<RouteRecordRaw> = [
   }
 ];
 
+const routes: Array<RouteRecordRaw> = defaultRoutes.concat(staticRoutes);
 const router = createRouter({
   history: createWebHashHistory(),
   routes

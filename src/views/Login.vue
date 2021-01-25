@@ -9,7 +9,7 @@
         autocomplete="off"
         label-position="left"
       >
-        <div class="title">aehyok</div>
+        <div class="title">广东IPTV行业管理平台</div>
         <el-form-item prop="username">
           <el-input
             ref="username"
@@ -64,9 +64,8 @@
   </div>
 </template>
 <script lang="ts">
-import Vue, { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 import { ElForm } from "element-plus";
-
 export default defineComponent({
   data() {
     return {

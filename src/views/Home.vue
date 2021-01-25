@@ -22,9 +22,6 @@ import { ElButton } from "element-plus";
   mounted() {
     console.log("mounted");
   },
-  destroyed() {
-    console.log("destroyed");
-  },
   methods: {
     test() {
       alert(1111);

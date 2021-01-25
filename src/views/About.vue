@@ -6,8 +6,7 @@
   </div>
 </template>
 <script lang="ts">
-import Vue, { defineComponent, ref, reactive } from "vue";
-import component from "*.vue";
+import { defineComponent, ref, reactive } from "vue";
 
 interface Student {
   name: string;
