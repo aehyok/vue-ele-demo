@@ -1,9 +1,9 @@
 <template>
   <div class="menu-container">
-    <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
+    <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
       <el-radio-button :label="false">展开</el-radio-button>
       <el-radio-button :label="true">收起</el-radio-button>
-    </el-radio-group>
+    </el-radio-group> -->
     <el-scrollbar class="scroll-wrap" :noresize="false" :view-style="{ height: '100%' }">
       <el-menu
         default-active="1-4-1"
@@ -50,11 +50,13 @@
 <style lang="scss" scoped>
 .el-menu {
   background: #2c303a;
+  border-right: none;
+  width: 200px;
 }
 .menu-container {
   position: fixed;
-  top: 60px;
-  left: 0;
+  top: 68px;
+  // left: 20px;
   height: calc(100% - 60px);
   display: flex;
   flex-direction: column;
@@ -79,7 +81,7 @@
 export default {
   data() {
     return {
-      isCollapse: true
+      isCollapse: false
     };
   },
   methods: {

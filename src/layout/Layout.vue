@@ -38,7 +38,6 @@ export default defineComponent({
 }
 .el-aside {
   height: calc(100vh - 60px);
-  background: #2c303a;
-  width: 90px;
+  // background: #2c303a;
 }
 </style>
