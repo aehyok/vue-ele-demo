@@ -23,6 +23,14 @@ const staticRoutes: Array<RouteRecordRaw> = [
         path: "/home",
         name: "Home",
         component: Home
+      },
+      {
+        path: "/echart-map",
+        name: "echart-map",
+        // route level code-splitting
+        // this generates a separate chunk (about.[hash].js) for this route
+        // which is lazy-loaded when the route is visited.
+        component: () => import(/* webpackChunkName: "echart-map" */ "../views/echarts/map.vue")
       }
     ]
   },

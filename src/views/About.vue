@@ -25,14 +25,15 @@ const Component = defineComponent({
     };
   },
   setup() {
-    const student: Student = reactive({ name: "aehyok", class: "cl", age: 32 });
+    const students: Student = reactive({ name: "aehyok", class: "cl", age: 32 });
     const year = ref("2020");
     const month = ref("9");
 
     month.value = "9"; // OK
     const result = year.value.split(""); // => Property 'split' does not exist on type 'number'
     return {
-      result
+      result,
+      students
     };
   }
 });

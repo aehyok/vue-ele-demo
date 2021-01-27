@@ -16,9 +16,6 @@ import { ElButton } from "element-plus";
     HelloWorld,
     [ElButton.name]: ElButton
   },
-  setup(e) {
-    console.log(e, "this.setup");
-  },
   mounted() {
     console.log("mounted");
   },
