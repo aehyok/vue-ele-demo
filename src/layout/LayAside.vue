@@ -32,7 +32,7 @@
             <el-menu-item index="1-4-1">选项1</el-menu-item>
           </el-submenu>
         </el-submenu>
-        <el-menu-item index="2">
+        <el-menu-item index="/table">
           <i class="el-icon-menu"></i>
           <template #title>table组件</template>
         </el-menu-item>

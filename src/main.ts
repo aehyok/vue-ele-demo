@@ -9,7 +9,7 @@ import axios from "axios";
 import * as echarts from "echarts";
 
 const app = createApp(App);
-// app.echarts = echarts;
+
 app.config.globalProperties.$axios = axios;
 app.config.globalProperties.$echarts = echarts;
 app.use(ElementPlus, { size: "medium", zIndex: 3000 });

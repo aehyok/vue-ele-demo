@@ -1,6 +1,6 @@
 <template>
   <div class="platform-header">
-    <img style="height: 50px;" :src="logoSrc" alt="广东IPTV行业管理平台" />
+    <img style="height: 50px;width:180px;" :src="logoSrc" alt="广东IPTV行业管理平台" />
   </div>
 </template>
 <script>
