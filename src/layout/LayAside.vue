@@ -53,10 +53,15 @@
           <i class="el-icon-setting"></i>
           <template #title>代码表组件</template>
         </el-menu-item>
-        <el-menu-item index="6">
-          <i class="el-icon-setting"></i>
-          <template #title>多媒体组件</template>
-        </el-menu-item>
+        <el-submenu index="6">
+          <template #title>
+            <i class="el-icon-location"></i>
+            <span>多媒体组件</span>
+          </template>
+          <el-menu-item index="/media">视频转码</el-menu-item>
+          <el-menu-item index="3-2">选项1</el-menu-item>
+          <el-menu-item index="3-3">选项1</el-menu-item>
+        </el-submenu>
         <el-submenu index="7">
           <template #title>
             <i class="el-icon-location"></i>
