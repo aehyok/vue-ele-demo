@@ -4,7 +4,7 @@
       <el-radio-button :label="false">展开</el-radio-button>
       <el-radio-button :label="true">收起</el-radio-button>
     </el-radio-group> -->
-    <el-scrollbar class="scroll-wrap" :noresize="false" :view-style="{ height: '100%' }">
+    <el-scrollbar class="scroll-wrap" :noresize="false">
       <el-menu
         default-active="/echart-map"
         background-color="#2c303a"
@@ -33,12 +33,12 @@
           </el-submenu>
         </el-submenu>
         <el-menu-item index="/table">
-          <i class="el-icon-menu"></i>
+          <i class="el-icon-s-grid"></i>
           <template #title>table组件</template>
         </el-menu-item>
         <el-submenu index="3">
           <template #title>
-            <i class="el-icon-location"></i>
+            <i class="el-icon-pie-chart"></i>
             <span>echarts组件</span>
           </template>
           <el-menu-item index="./echart-map">echarts-map</el-menu-item>
@@ -46,7 +46,7 @@
           <el-menu-item index="3-3">选项1</el-menu-item>
         </el-submenu>
         <el-menu-item index="4">
-          <i class="el-icon-setting"></i>
+          <i class="el-icon-map-location"></i>
           <template #title>map组件</template>
         </el-menu-item>
         <el-menu-item index="5">
@@ -55,7 +55,7 @@
         </el-menu-item>
         <el-submenu index="6">
           <template #title>
-            <i class="el-icon-location"></i>
+            <i class="el-icon-video-camera"></i>
             <span>多媒体组件</span>
           </template>
           <el-menu-item index="/media">视频转码</el-menu-item>
@@ -64,7 +64,7 @@
         </el-submenu>
         <el-submenu index="7">
           <template #title>
-            <i class="el-icon-location"></i>
+            <i class="el-icon-menu"></i>
             <span>菜单维护</span>
           </template>
           <el-menu-item index="7-3-1">选项1</el-menu-item>

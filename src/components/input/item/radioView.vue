@@ -2,42 +2,61 @@
 <template>
   <div>
     <el-form-item :label="column.title" :prop="column.name" :rules="rules">
-      <el-radio-group v-model="value" @change="radioChange" style="float:left">
+      <el-radio-group v-model="value" @change="radioChange" style="float:left;">
         <el-radio v-for="item in list" :label="item.id" :key="item.id">
           {{ item.text }}
         </el-radio>
       </el-radio-group>
     </el-form-item>
+    <div v-for="(control, index) in column.controls" :key="index">
+      <div v-if="value === control.value">
+        <FormView :columnList="control.showCondition" :formData="formData" />
+      </div>
+    </div>
   </div>
 </template>
 <script>
 import { getContentTypeList } from "@/mock/api";
 export default {
+  // 组件嵌套如何引用的问题
+  components: {
+    FormView: () => import("@/components/input/formView")
+  },
   props: {
     column: {
       type: [Object],
       default: () => {
-        console.log("radio");
+        console.log("1");
+      }
+    },
+    formData: {
+      type: [Object],
+      default: () => {
+        console.log("1");
       }
     },
     data: {
       type: Number,
-      default: 1
+      default: undefined
     }
   },
   data() {
     return {
+      list: [],
       rules: [
         {
-          required: this.column.required,
-          message: "请选择" + this.column.title
+          // 加上双？？，防止出现选中后提示请选择"this.column.title"
+          required: this.column.required ?? false,
+          message: "请选择" + this.column.title,
+          trigger: "change"
         }
-      ],
-      list: []
+      ]
     };
   },
   created() {
     this.getList();
+    console.log(this.column, "this.radioView");
+    console.log(this.column.required, "required");
   },
   computed: {
     value: {
@@ -45,6 +64,7 @@ export default {
         return this.data;
       },
       set: function(val) {
+        console.log(val, typeof val, "this.radioView.val");
         this.$emit("update:data", val);
       }
     }
@@ -59,8 +79,7 @@ export default {
     // radio change事件去切换控制其他组件，或者其他几个组件（先考虑控制一个）
     // 要通过一个字段控制，如果是这个字段，则可以进行控制切换状态
     radioChange(e) {
-      alert(e);
-      console.log(e);
+      console.log(e, this.column, "this.radioChange");
     }
   }
 };

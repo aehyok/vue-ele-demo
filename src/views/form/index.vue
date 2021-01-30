@@ -101,7 +101,41 @@ export default {
         {
           name: "type",
           type: "radio",
-          title: "栏目类型"
+          title: "栏目类型",
+          controls: [
+            {
+              value: 1,
+              showCondition: [
+                {
+                  name: "show",
+                  type: "radio",
+                  title: "测试类型",
+                  required: true
+                },
+                {
+                  name: "image1",
+                  type: "image",
+                  title: "文件"
+                }
+              ]
+            },
+            {
+              value: 2,
+              showCondition: [
+                {
+                  name: "isValids",
+                  type: "switch",
+                  title: "是否有效"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: "requireType",
+          type: "radio",
+          title: "图文类型",
+          required: true
         },
         {
           name: "range",
@@ -119,12 +153,6 @@ export default {
           type: "select",
           title: "证件类型"
         },
-        // {
-        //   name: 'requireType',
-        //   type: 'radio',
-        //   title: '图文类型',
-        //   required: true,
-        // },
         {
           name: "image",
           type: "image",
@@ -137,7 +165,7 @@ export default {
         count: null,
         createDate: 1606730360386,
         type: 1,
-        requireType: 0,
+        requireType: undefined,
         creType: "",
         range: [],
         isExpired: false,
@@ -147,4 +175,3 @@ export default {
   }
 };
 </script>
-<style scoped></style>

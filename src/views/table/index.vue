@@ -64,7 +64,7 @@ export default {
           prop: "title",
           label: "标题",
           align: "center",
-          formatter: (row, column, cellValue) => {
+          formatter: row => {
             return `<span style="white-space: nowrap;color: dodgerblue;">${row.title}</span>`;
           }
         },

@@ -1,24 +1,15 @@
-# hello
+# readme
+## 项目启动 npm run start or yarn start
 
-## Project setup
-```
-yarn install
-```
+- 1、Vue3.0+Element-Plus+TypeScript项目搭建
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+- 2、前端首页布局和菜单搭建
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- 3、引入echarts中的map地图
 
-### Lints and fixes files
-```
-yarn lint
-```
+- 4、引入mock并安装  npm install --save @types/mockjs
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- 5、引入ffmpge视频转码   npm install @ffmpeg/ffmpeg
+
+- 6、
+```

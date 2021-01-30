@@ -14,7 +14,6 @@
     "core-js": "^3.6.5",
     "echarts": "^5.0.1",
     "element-plus": "^1.0.2-beta.28",
-    "mock": "^0.1.1",
     "mockjs": "^1.1.0",
     "register-service-worker": "^1.7.1",
     "vue": "^3.0.0",
