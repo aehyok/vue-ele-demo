@@ -20,11 +20,14 @@ export default defineComponent({
     });
     const message = ref("Click Start to Transcode");
     const video = ref("");
-    const file = process.env.NODE_ENV === "production" ? "/vue-app/flame.avi" : "/bootvideo.ts";
+    const file = process.env.NODE_ENV === "production" ? "/flame.avi" : "/bootvideo.ts";
     // methods
     async function transcode() {
       message.value = "Loading ffmeg-core.js";
-      await ffmpeg.load();
+      if (!ffmpeg.isLoaded()) {
+        // 判断是否已经加载
+        await ffmpeg.load();
+      }
       message.value = "Start transcoding";
       ffmpeg.FS("writeFile", "test.avi", await fetchFile(file));
       await ffmpeg.run("-i", "test.avi", "test.mp4");
