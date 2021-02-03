@@ -87,27 +87,27 @@ export default defineComponent({
     test(test: string) {
       console.log(test);
     },
-    validateAccount(rule: any, value: string, callback: Function) {
-      if (value === "") {
-        callback(new Error("请输入用户名"));
-      } else {
-        callback();
-      }
-    },
-    validatePassword(rule: any, value: string, callback: Function) {
-      if (value === "") {
-        callback(new Error("请输入密码"));
-      } else {
-        callback();
-      }
-    },
-    validatorVerCode(rule: any, value: string, callback: Function) {
-      if (value === "") {
-        callback(new Error("请输入验证码"));
-      } else {
-        callback();
-      }
-    },
+    // validateAccount(rule: any, value: string, callback: Function) {
+    //   if (value === "") {
+    //     callback(new Error("请输入用户名"));
+    //   } else {
+    //     callback();
+    //   }
+    // },
+    // validatePassword(rule: any, value: string, callback: Function) {
+    //   if (value === "") {
+    //     callback(new Error("请输入密码"));
+    //   } else {
+    //     callback();
+    //   }
+    // },
+    // validatorVerCode(rule: any, value: string, callback: Function) {
+    //   if (value === "") {
+    //     callback(new Error("请输入验证码"));
+    //   } else {
+    //     callback();
+    //   }
+    // },
     // 登录
     handleLogin() {
       this.$router.push("/");
